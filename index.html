@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecurePulse | Risk Intelligence</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#">
+      <span class="brand-icon">✳</span>
+      <span>Secure<span class="brand-gold">Pulse</span><small>HEALTH INTELLIGENCE</small></span>
+    </a>
+
+    <div class="nav-label">WORKSPACE</div>
+    
+<nav class="nav-menu">
+  <a class="nav-item active" href="#overview">
+    <span>▦</span> Dashboard
+  </a>
+  <a class="nav-item" href="#analytics">
+    <span>◉</span> Risk Analytics
+  </a>
+  <a class="nav-item" href="#assessment">
+    <span>♡</span> Risk Assessment
+  </a>
+  <a class="nav-item" href="#alerts">
+    <span>⚑</span> Patient Alerts
+  </a>
+</nav>
+
+
+    <div class="sidebar-bottom">
+      <div class="secure-note">
+        <span class="pulse-dot"></span>
+        <div><strong>System Overview</strong><small>Illustrative demo environment</small></div>
+      </div>
+      <div class="profile">
+        <div class="avatar">SP</div>
+        <div><strong>SecurePulse AI</strong><small>Healthcare Intelligence</small></div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content" id="overview">
+    <header class="topbar">
+      <div class="breadcrumb"><strong>Dashboard</strong></div>
+      <div class="top-actions">
+        <span class="live-status"><i class="pulse-dot"></i> Demo environment</span>
+        <button id="themeToggle" class="theme-toggle" type="button">☾ Dark mode</button>
+        <div class="top-avatar">SP</div>
+      </div>
+    </header>
+
+    <section class="welcome-row">
+      <div>
+        <div class="eyebrow">SATURDAY, OCTOBER 17 · OVERVIEW</div>
+        <h1>Healthcare Risk <span>Intelligence.</span></h1>
+        <p>Monitor indicators, explore risk patterns and review patient alerts.</p>
+      </div>
+      <a class="outline-button" href="#assessment">＋ New assessment</a>
+    </section>
+
+    <div class="demo-banner">
+      <span class="banner-icon">ⓘ</span>
+      <span><strong>Demonstration mode</strong> — figures and patient alerts shown here are illustrative sample data, not real patient records.</span>
+    </div>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <div class="metric-top"><span>Total patients</span><span class="metric-icon green">♧</span></div>
+        <div class="metric-value">120</div>
+        <div class="metric-foot"><span class="metric-line"></span> Sample dataset</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-top"><span>High-risk cases</span><span class="metric-icon red">↗</span></div>
+        <div class="metric-value">12</div>
+        <div class="metric-foot"><span class="risk-pill">Needs review</span> Illustrative</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-top"><span>Active alerts</span><span class="metric-icon gold">⚑</span></div>
+        <div class="metric-value">08</div>
+        <div class="metric-foot">Sample alerts <span class="gold-text">●</span></div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-top"><span>API status</span><span class="metric-icon green">⌁</span></div>
+        <div class="metric-value status-value" id="apiStatus">Checking…</div>
+        <div class="metric-foot"><span class="pulse-dot"></span> Backend connection</div>
+      </article>
+    </section>
+
+    <section class="content-grid" id="analytics">
+      <article class="panel analytics-panel">
+        <div class="panel-heading">
+          <div><div class="eyebrow">DATA OVERVIEW</div><h2>Risk distribution</h2><p>Illustrative patient risk categories</p></div>
+          <span class="mini-tag">Sample data</span>
+        </div>
+        <div class="chart-wrap"><canvas id="riskChart"></canvas></div>
+        <div class="legend-row">
+          <span><i class="legend-dot low"></i>Low <strong>72</strong></span>
+          <span><i class="legend-dot medium"></i>Medium <strong>36</strong></span>
+          <span><i class="legend-dot high"></i>High <strong>12</strong></span>
+        </div>
+      </article>
+
+      <article class="panel distribution-panel">
+        <div class="panel-heading">
+          <div><div class="eyebrow">AT A GLANCE</div><h2>Risk overview</h2><p>Distribution in sample dataset</p></div>
+        </div>
+        <div class="risk-summary">
+          <div class="risk-summary-icon low-bg">↘</div>
+          <div class="risk-summary-text"><strong>72</strong><span>Low risk</span></div>
+          <div class="progress"><span class="progress-low"></span></div>
+        </div>
+        <div class="risk-summary">
+          <div class="risk-summary-icon medium-bg">≈</div>
+          <div class="risk-summary-text"><strong>36</strong><span>Medium risk</span></div>
+          <div class="progress"><span class="progress-medium"></span></div>
+        </div>
+        <div class="risk-summary">
+          <div class="risk-summary-icon high-bg">↑</div>
+          <div class="risk-summary-text"><strong>12</strong><span>High risk</span></div>
+          <div class="progress"><span class="progress-high"></span></div>
+        </div>
+        <div class="insight-box"><span>✧</span><div><strong>Demo insight</strong><p>High-risk sample cases should be reviewed first in this illustrative workflow.</p></div></div>
+      </article>
+    </section>
+
+    <section class="content-grid lower-grid">
+      <article class="panel alerts-panel" id="alerts">
+        <div class="panel-heading">
+          <div><div class="eyebrow">MONITORING</div><h2>Recent patient alerts</h2><p>Fictional examples for demonstration</p></div>
+          <span class="mini-tag">3 examples</span>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Patient ID</th><th>Indicator</th><th>Risk level</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><span class="patient-avatar">P1</span> Patient 001</td><td>Elevated temperature</td><td><span class="table-risk high">High</span></td><td><span class="status-review">Review</span></td></tr>
+              <tr><td><span class="patient-avatar">P2</span> Patient 002</td><td>Raised heart rate</td><td><span class="table-risk medium">Medium</span></td><td><span class="status-pending">Pending</span></td></tr>
+              <tr><td><span class="patient-avatar">P3</span> Patient 003</td><td>Within demo range</td><td><span class="table-risk low">Low</span></td><td><span class="status-clear">Recorded</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel assessment-panel" id="assessment">
+        <div class="panel-heading">
+          <div><div class="eyebrow">AI RISK ENGINE</div><h2>Risk assessment</h2><p>Test the illustrative prediction API</p></div>
+          <span class="assessment-symbol">✳</span>
+        </div>
+        <form id="predictionForm">
+          <label for="heart_rate">Heart rate <span>(BPM)</span></label>
+          <input id="heart_rate" name="heart_rate" type="number" min="20" max="250" value="110" required>
+          <label for="temperature">Body temperature <span>(°C)</span></label>
+          <input id="temperature" name="temperature" type="number" min="30" max="45" step="0.1" value="38.2" required>
+          <button class="primary-button" id="predictBtn" type="submit">Analyze demo risk <span>→</span></button>
+        </form>
+        <div id="result" class="result-box" aria-live="polite">Enter the sample measurements and run an analysis.</div>
+        <p class="disclaimer">Demo only. This output is not a medical diagnosis or a substitute for professional care.</p>
+      </article>
+    </section>
+
+    <footer><span>✳ SecurePulse</span> · AI-powered healthcare risk intelligence <span class="footer-right">Hackathon demonstration · 2026</span></footer>
+  </main>
+</div>
+
+<script>
+const chartCanvas = document.getElementById('riskChart');
+if (chartCanvas && window.Chart) {
+  
+   
+new Chart(chartCanvas, {
+  type: 'bar',
+  data: {
+    labels: ['Low risk', 'Medium risk', 'High risk'],
+    datasets: [{
+      data: [72, 36, 12],
+      backgroundColor: ['#78A184', '#D7B36A', '#C77D70'],
+      borderSkipped: false,
+      borderRadius: 3,
+      maxBarThickness: 58,
+      categoryPercentage: 0.65,
+      barPercentage: 0.8
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 1400, easing: 'easeOutQuart' },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#203D32',
+        padding: 12,
+        cornerRadius: 8
+      }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        border: { display: false }
+      },
+      y: {
+        beginAtZero: true,
+        max: 80,
+        ticks: { stepSize: 20 },
+        grid: { color: '#E1E8DD' },
+        border: { display: false }
+      }
+    }
+  },
+  plugins: [{
+    id: 'depthBars',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      const meta = chart.getDatasetMeta(0);
+      const depth = 9;
+
+      meta.data.forEach((bar, i) => {
+        const { x, y, base, width } = bar;
+        const left = x - width / 2;
+        const right = x + width / 2;
+        const colors = ['#527B60', '#B18A43', '#A9584D'];
+
+        ctx.save();
+
+        // Right side face
+        ctx.beginPath();
+        ctx.moveTo(right, y);
+        ctx.lineTo(right + depth, y - depth);
+        ctx.lineTo(right + depth, base - depth);
+        ctx.lineTo(right, base);
+        ctx.closePath();
+        ctx.fillStyle = colors[i];
+        ctx.fill();
+
+        // Top face
+        ctx.beginPath();
+        ctx.moveTo(left, y);
+        ctx.lineTo(left + depth, y - depth);
+        ctx.lineTo(right + depth, y - depth);
+        ctx.lineTo(right, y);
+        ctx.closePath();
+        ctx.fillStyle = ['#B0CDB2', '#F0D49A', '#E6A69A'][i];
+        ctx.fill();
+
+        ctx.restore();
+      });
+    }
+  }]
+});
+}
+</script>
+<script src="../static/script.js"></script>
+
+<script>
+const themeToggle = document.getElementById('themeToggle');
+
+if (themeToggle) {
+  themeToggle.onclick = function () {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    this.textContent = isDark ? '☀ Light mode' : '☾ Dark mode';
+  };
+}
+</script>
+
+</body>
+</html>
