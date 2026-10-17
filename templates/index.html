@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePulse | Healthcare Risk Intelligence</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="brand">💚 SecurePulse</div>
+        <span>Healthcare Risk Intelligence</span>
+        <span class="status">● Demo System</span>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">PATIENT MONITORING</p>
+                <h1>Health Risk Dashboard</h1>
+                <p>Explore illustrative health-risk results using sample values.</p>
+            </div>
+        </section>
+
+        <section class="cards">
+            <article class="card">
+                <p>API Status</p>
+                <h2 id="apiStatus">Checking...</h2>
+            </article>
+            <article class="card">
+                <p>Heart Rate</p>
+                <h2 id="heartDisplay">110 <small>bpm</small></h2>
+            </article>
+            <article class="card">
+                <p>Temperature</p>
+                <h2 id="tempDisplay">38.2 <small>°C</small></h2>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>Check Illustrative Risk Category</h2>
+            <p class="muted">Enter sample measurements to test the demo API.</p>
+            <form id="riskForm">
+                <label for="heartRate">Heart rate (bpm)</label>
+                <input id="heartRate" type="number" min="30" max="250"
+                       value="110" required>
+                <label for="temperature">Temperature (°C)</label>
+                <input id="temperature" type="number" min="30" max="45"
+                       step="0.1" value="38.2" required>
+                <button type="submit" id="checkButton">Check Risk</button>
+            </form>
+
+            <div id="result" class="result" hidden aria-live="polite"></div>
+            <p class="disclaimer">
+                Demo only. This rule-based output is not a medical diagnosis
+                and must not guide real patient care.
+            </p>
+        </section>
+    </main>
+
+    <footer>SecurePulse · Privacy-aware healthcare risk intelligence · Prototype</footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>

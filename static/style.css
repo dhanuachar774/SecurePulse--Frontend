@@ -1,0 +1,58 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: #edf5ff;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 6%;
+    background: #101a2a;
+    border-bottom: 1px solid #26364c;
+}
+
+.brand { font-size: 23px; font-weight: bold; color: #35d6bd; }
+header span { color: #9aabc0; font-size: 14px; }
+
+main { max-width: 1100px; margin: 45px auto; padding: 0 24px; }
+.welcome { margin-bottom: 30px; }
+.eyebrow { color: #35d6bd; font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; }
+h1 { font-size: 36px; margin-bottom: 12px; }
+.welcome p:last-child, .muted { color: #9aabc0; line-height: 1.6; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 25px; }
+.card, .panel { background: #131e30; border: 1px solid #26364c; border-radius: 16px; padding: 24px; }
+.card p { color: #9aabc0; font-size: 14px; margin-bottom: 14px; }
+.card h2 { font-size: 28px; color: #35d6bd; }
+small { font-size: 14px; color: #9aabc0; }
+
+.panel h2 { font-size: 22px; margin-bottom: 10px; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+label { color: #9aabc0; font-size: 14px; }
+
+input {
+    width: 100%; padding: 13px; border: 1px solid #26364c;
+    border-radius: 9px; background: #0b1423; color: white; font-size: 16px;
+}
+
+button {
+    grid-column: 1 / -1; padding: 14px; margin-top: 8px;
+    border: none; border-radius: 9px; background: #35d6bd;
+    color: #06211e; font-size: 16px; font-weight: bold; cursor: pointer;
+}
+
+.result { margin-top: 20px; padding: 18px; border-radius: 10px; background: #0b1423; border: 1px solid #26364c; line-height: 1.8; overflow-wrap: anywhere; }
+.disclaimer, footer { color: #9aabc0; font-size: 12px; line-height: 1.6; margin-top: 20px; }
+footer { padding: 25px; text-align: center; }
+
+@media (max-width: 650px) {
+    header { flex-wrap: wrap; }
+    .cards { grid-template-columns: 1fr; }
+    form { grid-template-columns: 1fr; }
+}
